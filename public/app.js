@@ -187,6 +187,8 @@
       if (!res.ok || !data.ok) throw new Error(data.error || "failed");
 
       form.hidden = true;
+      var head = document.querySelector(".apply-head");
+      if (head) head.hidden = true;
       done.hidden = false;
       done.scrollIntoView({ block: "center", behavior: "smooth" });
     } catch (err) {

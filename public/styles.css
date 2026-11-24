@@ -282,7 +282,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .strength-no {
   font-family: var(--serif);
   font-size: 11px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.12em;
   color: var(--champagne);
 }
 .strengths h3 {
@@ -314,8 +314,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 .benefit-tag {
   font-family: var(--serif);
-  font-size: 10.5px;
-  letter-spacing: 0.26em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
   color: var(--champagne);
 }
 .benefits h3 {

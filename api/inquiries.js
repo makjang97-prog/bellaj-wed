@@ -2,7 +2,7 @@
 
 const { hasDb, insertInquiry } = require('../lib/db');
 
-const PLANS = ['촬영+본식', '본식 단독', '플러스사이즈 피팅', '상담 후 결정', ''];
+const PLANS = ['촬영+본식', '본식 단독', '드메 토탈', '플러스사이즈 (브라이드앨리 별도 상담)', '상담 후 결정', ''];
 
 /* 간단한 메모리 기반 요청 제한 (같은 IP에서 시간당 30건) */
 const hits = new Map();

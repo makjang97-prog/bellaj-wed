@@ -30,6 +30,8 @@ body {
   font-size: 15px;
   line-height: 1.7;
   letter-spacing: -0.01em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -120,6 +122,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   color: var(--ink-soft);
 }
 
+.hero-lead b { font-weight: 600; color: var(--ink); }
+
 .hero-points {
   margin-top: 22px;
   display: grid;
@@ -136,6 +140,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--paper);
+}
+.hero-points li.is-key {
+  grid-column: 1 / -1;
+  font-weight: 600;
+  color: #7d5c35;
+  background: var(--champagne-soft);
+  border-color: #e4d5c2;
+  letter-spacing: 0.02em;
 }
 
 .hero-actions { margin-top: 24px; display: grid; gap: 9px; }
@@ -266,6 +278,43 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .look-grid figure { margin: 0; overflow: hidden; background: #f2eeeb; }
 .look-grid img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
 
+/* ---------- compare (02 about) ---------- */
+.compare {
+  padding: 0 22px;
+  max-width: 720px;
+  margin: 0 auto 32px;
+  display: grid;
+  gap: 8px;
+}
+@media (min-width: 560px) {
+  .compare { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+.compare-col {
+  padding: 15px 16px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+.compare-col.is-us {
+  border-color: #e4d5c2;
+  background: #fffdfb;
+  box-shadow: 0 14px 30px -26px rgba(34, 29, 28, 0.4);
+}
+.compare-label {
+  font-family: var(--serif);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.compare-col.is-us .compare-label { color: var(--champagne); }
+.compare-body {
+  margin-top: 8px;
+  font-size: 12.8px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.compare-col.is-us .compare-body { color: var(--ink); }
+
 /* ---------- strengths ---------- */
 .strengths {
   padding: 0 22px;
@@ -285,17 +334,69 @@ button { font: inherit; color: inherit; cursor: pointer; }
   letter-spacing: 0.12em;
   color: var(--champagne);
 }
+.strengths .strength-tag {
+  display: inline-block;
+  margin-top: 9px;
+  padding: 3px 10px;
+  font-family: var(--serif);
+  font-size: 10.5px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
+  color: #7d5c35;
+  background: var(--champagne-soft);
+  border: 1px solid #e4d5c2;
+  border-radius: 999px;
+}
 .strengths h3 {
   margin-top: 7px;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.015em;
 }
-.strengths p {
+.strengths li.is-main h3 { margin-top: 9px; font-size: 17px; }
+.strengths p:not(.strength-tag) {
   margin-top: 7px;
   font-size: 13.5px;
   line-height: 1.8;
   color: var(--ink-soft);
+}
+
+/* ---------- brand note (bridal alley) ---------- */
+.brand-note {
+  margin: 28px 22px 0;
+  padding: 18px 18px 19px;
+  border: 1px solid #e4d5c2;
+  border-radius: 10px;
+  background: #fffdfb;
+}
+@media (min-width: 720px) {
+  .brand-note { max-width: 676px; margin-left: auto; margin-right: auto; }
+}
+.brand-note-label {
+  font-family: var(--serif);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  color: var(--champagne);
+}
+.brand-note h3 {
+  margin-top: 8px;
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.brand-note h3 em { font-style: normal; color: #7d5c35; }
+.brand-note p {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+.brand-note p.brand-note-foot {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px dashed #e8dccb;
+  font-size: 11.8px;
+  color: var(--muted);
 }
 
 /* ---------- benefits ---------- */
@@ -625,6 +726,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .strengths { max-width: 1036px; grid-template-columns: 1fr 1fr; gap: 0 40px; }
   .strengths li { padding: 26px 0; }
   .strengths li:nth-child(2) { border-top: 0; padding-top: 0; }
+  .compare { max-width: 1036px; }
   .benefits { max-width: 1036px; grid-template-columns: 1fr 1fr; gap: 12px; }
   .apply-card { max-width: 720px; padding: 34px 34px 30px; }
   .insta-btn { max-width: 720px; }

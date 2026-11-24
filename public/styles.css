@@ -717,6 +717,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .hero-inner { padding: 0; max-width: none; }
   .hero-figure img { aspect-ratio: 4 / 5; border-radius: 2px; }
   .hero-points { display: flex; flex-wrap: wrap; max-width: none; }
+  .hero-points li.is-key { flex: 0 0 100%; }
   .hero-actions { grid-template-columns: auto auto; justify-content: start; }
   .section { padding: 84px 0; }
   .section-head { padding: 0 22px; max-width: 1080px; }

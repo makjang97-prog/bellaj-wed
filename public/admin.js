@@ -229,6 +229,11 @@
     toast("새로고침했습니다");
   });
 
+  /* 30초마다 자동 새로고침 (화면이 보일 때만) */
+  setInterval(function () {
+    if (!app.hidden && document.visibilityState === "visible") load();
+  }, 30000);
+
   /* 세션이 살아 있으면 바로 목록으로 */
   (async function boot() {
     try {

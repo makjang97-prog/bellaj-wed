@@ -183,7 +183,7 @@
           body: JSON.stringify({ id: id, status: status })
         });
         if (!res.ok) throw new Error("failed");
-        var row = rows.find(function (r) { return r.id === id; });
+        var row = rows.find(function (r) { return String(r.id) === String(id); });
         if (row) row.status = status;
         render();
         toast("‘" + LABEL[status] + "’로 바꿨습니다");
@@ -204,7 +204,7 @@
           body: JSON.stringify({ id: did })
         });
         if (!dres.ok) throw new Error("failed");
-        rows = rows.filter(function (r) { return r.id !== did; });
+        rows = rows.filter(function (r) { return String(r.id) !== String(did); });
         render();
         toast("삭제했습니다");
       } catch (err) {

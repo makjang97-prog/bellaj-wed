@@ -123,6 +123,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 
 .hero-lead b { font-weight: 600; color: var(--ink); }
+.nw { white-space: nowrap; }
 
 .hero-points {
   margin-top: 22px;

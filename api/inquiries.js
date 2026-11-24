@@ -4,7 +4,7 @@ const { hasDb, insertInquiry } = require('../lib/db');
 
 const PLANS = ['촬영+본식', '본식 단독', '플러스사이즈 피팅', '상담 후 결정', ''];
 
-/* 간단한 메모리 기반 요청 제한 (같은 IP에서 시간당 8건) */
+/* 간단한 메모리 기반 요청 제한 (같은 IP에서 시간당 30건) */
 const hits = new Map();
 function limited(ip) {
   const now = Date.now();
@@ -13,7 +13,7 @@ function limited(ip) {
   list.push(now);
   hits.set(ip, list);
   if (hits.size > 2000) hits.clear();
-  return list.length > 8;
+  return list.length > 30;
 }
 
 function clientIp(req) {
